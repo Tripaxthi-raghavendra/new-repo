@@ -1,374 +1,41 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DRIPVIBE - Clothing Store</title>
-  <link rel="stylesheet" href="style12.css">
-  <link rel="icon" href="images/1202_3261.png" type="image/png">
-  <!-- Font Awesome for icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <title>My Portfolio</title>
+    <style>
+        body { font-family: sans-serif; text-align: center; padding: 50px; }
+        form { margin-top: 20px; }
+  
+    <script>
+        document.getElementById('contactForm').onsubmit = async (e) => {
+            e.preventDefault();
+            const data = { 
+                name: document.getElementById('name').value, 
+                message: document.getElementById('message').value 
+            };
+
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+            const result = await response.json();
+            alert(result.message);
+        };
+    </script>
+</body>
+</html>      input, textarea { display: block; margin: 10px auto; width: 300px; padding: 10px; }
+    </style>
 </head>
 <body>
-  <section id="header">
-    <div class="top-banner">
-      <div class="container">
-        <p><a href="signup.html">Sign up and get 20% off to your first order.</a></p>
-        
-      <button class="close-banner-btn">&times;</button>
-         
-        
-      </div>
-    </div>
-    <header class="main-header">
-      <div class="container header-container">
-        <a href="#" class="logo">
-          DRIPVIBE
-        </a>
-        
-        <nav class="main-nav">
-          <ul>
-            <li><a href="categories.html">Shop <i class="fas fa-chevron-down"></i></a></li>
-            <li><a href="#">On Sale</a></li>
-            <li><a href="#new-arrivals">New Arrivals</a></li>
-            <li><a href="#top-selling">Top Selling</a></li>
-          </ul>
-        </nav>
-        <div class="header-actions">
-          <form class="search-bar">
-            <i class="fas fa-search"></i>
-            <input type="text" placeholder="Search for products...">
-          </form>
-          <div class="user-actions">
-            <a href="cart.html" class="cart-btn"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a>
-            <a href="login.html" id="userIconBtn" class="user-btn"><i class="fas fa-user"></i></a>
-          </div>
-        </div>
-      </div>
-    </header>
-    <div class="hero">
-      <div class="hero-image-container">
-        <img src="images/bannerhero.png" alt="Hero main image" class="hero-bg-img-2">
-      </div>
-      <div class="hero-content">
-        <a href="categories.html" class="shop-now-btn">Shop Now</a>
-      </div>
-    </div>
-  </section>
+    <h1>Welcome to My Portfolio</h1>
+    <p>Connecting Frontend to Database via Backend.</p>
 
-  <section id="new-arrivals" class="product-section">
-    <div class="container">
-      <h2 class="section-title">NEW ARRIVALS</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <a href="Product1.html"><img src="images/PRODUCT IMG/P2.jpg" alt="T-SHIRT WITH TAPE DETAILS"></a>
-            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-          </div>
-          <div class="product-info">
-            <h3>The Cold System </h3>
-            <div class="rating">
-              <img src="images/star.png" alt="Rating Stars" class="stars-img">
-              <span class="rating-value">4/5</span>
-            </div>
-            <div class="price">
-              <span class="current-price">Rs. 899</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-image-wrapper">
-          <a href="Product2.html"><img src="images/PRODUCT IMG/P12.jpg" alt="SKINNY FIT JEANS"></a>
-            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-          </div>
-          <div class="product-info">
-            <h3>Juicy Vibes</h3>
-            <div class="rating">
-              <img src="images/star.png" alt="Rating Stars" class="stars-img">
-              <span class="rating-value">4.5/5</span>
-            </div>
-            <div class="price">
-              <span class="current-price">Rs.1049</span>
-              <span class="original-price">Rs.1499</span>
-              <span class="discount-badge">-30%</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-image-wrapper">
-        <a href="Product3.html"><img src="images/PRODUCT IMG/P22.jpg" alt="ERROR"></a>
-            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-          </div>
-          <div class="product-info">
-            <h3>Ethical Flower </h3>
-            <div class="rating">
-              <img src="images/star.png" alt="Rating Stars" class="stars-img">
-              <span class="rating-value">3.5/5</span>
-            </div>
-            <div class="price">
-              <span class="current-price">Rs.999</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-image-wrapper">
+    <form id="contactForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <textarea id="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send to Database</button>
+    </form>
 
-          <a href="Product4.html"><img src="images/PRODUCT IMG/P31.jpg" alt="SLEEVE STRIPED T-SHIRT"></a>
-            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-          </div>
-          <div class="product-info">
-            <h3>NEWYORK Jersey</h3>
-            <div class="rating">
-              <img src="images/star.png" alt="Rating Stars" class="stars-img">
-              <span class="rating-value">4.5/5</span>
-            </div>
-            <div class="price">
-              <span class="current-price">Rs.1099</span>
-              <span class="original-price">Rs.1299</span>
-              <span class="discount-badge">-15%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="view-all-container">
-        <a href="categories.html" class="view-all-btn">View All</a>
-      </div>
-    </div>
-  </section>
 
-  <section id="top-selling" class="product-section">
-    <hr class="section-divider">
-    <div class="container">
-      <h2 class="section-title">TOP SELLING</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <div class="product-image-wrapper">
-
-          <a href="Product6.html"><img src="images/PRODUCT IMG/P52.jpg" alt="SLEEVE STRIPED T-SHIRT"></a>
-            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-          </div>
-          <div class="product-info">
-            <h3>Cherry Note</h3>
-            <div class="rating">
-              <img src="images/star.png" alt="Rating Stars" class="stars-img">
-              <span class="rating-value">4.5/5</span>
-            </div>
-            <div class="price">
-              <span class="current-price">Rs.1199</span>
-              
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <a href="Product7.html"><img src="images/PRODUCT IMG/P61.jpg" alt="T-SHIRT WITH TAPE DETAILS"></a>
-            
-            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-          </div>
-          <div class="product-info">
-            <h3>Classic Green </h3>
-            <div class="rating">
-              <img src="images/star.png" alt="Rating Stars" class="stars-img">
-              <span class="rating-value">4/5</span>
-            </div>
-            <div class="price">
-              <span class="current-price">Rs. 799</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-image-wrapper">
-            <a href="Product5.html">
-            <img src="images/PRODUCT IMG/P41.jpg" alt="PORSCHE"></a>
-            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-          </div>
-          <div class="product-info">
-            <h3>Unfollow Trends</h3>
-            <div class="rating">
-              <img src="images/star.png" alt="Rating Stars" class="stars-img">
-              <span class="rating-value">4.5/5</span>
-            </div>
-            <div class="price">
-              <span class="current-price">Rs.999</span>
-            </div>
-          </div>
-        </div>
-        <div class="product-card">
-          <div class="product-image-wrapper">
-          <a href="Product8.html"><img src="images/PRODUCT IMG/P81.jpg" alt="SKINNY FIT JEANS"></a>
-            <button class="add-to-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
-          </div>
-          <div class="product-info">
-            <h3>Classic Black</h3>
-            <div class="rating">
-              <img src="images/star.png" alt="Rating Stars" class="stars-img">
-              <span class="rating-value">4.5/5</span>
-            </div>
-            <div class="price">
-              <span class="current-price">Rs.899</span>
-              <span class="original-price">Rs.1259</span>
-              <span class="discount-badge">-40%</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="view-all-container">
-        <a href="categories.html" class="view-all-btn">View All</a>
-      </div>
-    </div>
-  </section>
-
-  <section id="styles" class="browse-styles-section">
-    <div class="container">
-      <h2 class="section-title">BROWSE BY dress STYLE</h2>
-      <div class="styles-grid">
-        <div class="style-card card-tshirt">
-          <h3>TSHIRT</h3>
-          <a href="categories.html"><img src="images/tshi.png" alt="T-shirt style"></a>
-          </div>
-        <div class="style-card card-oversized">
-          <h3>OVERSIZED</h3>
-          <a href="categories.html"><img src="images/over1.jpg" alt="Oversized style"></a>
-        </div>
-        <div class="style-card card-printed">
-          <h3>PRINTED</h3>
-          <a href="categories.html"><img src="images/prin.png" alt="Printed"></a>
-        </div>
-        <div class="style-card card-bottoms">
-          <h3>BOTTOMS</h3>
-          <a href="categories.html"><img src="images/Bot.png" alt="Bottoms"></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="testimonials" class="testimonials-section">
-    <div class="container">
-      <div class="testimonials-header">
-        <h2 class="section-title">OUR HAPPY CUSTOMERS</h2>
-        <div class="carousel-nav">
-          <button id="prevBtn">
-            <img src="images/ArrrowL.png" alt="Previous">
-          </button>
-          <button id="nextBtn">
-            <img src="images/ArrowRight.png" alt="Next">
-          </button>
-        </div>
-      </div>
-      <div class="testimonials-carousel">
-        <div class="testimonial-card">
-          <div class="rating">
-            <img src="images/star.png" alt="Rating Stars" class="stars-img">
-          </div>
-          <h4 class="testimonial-author">Priya R. <img src="images/ver.png" alt="Verified" class="verified-icon"></h4>
-          <p class="testimonial-text">"Loved the T-shirts! Super comfy and stylish. Will definitely shop again."</p>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="rating">
-            <img src="images/star.png" alt="Rating Stars" class="stars-img">
-          </div>
-          <h4 class="testimonial-author"> Rahul K. <img src="images/ver.png" alt="Verified" class="verified-icon"></h4>
-          <p class="testimonial-text">"Great quality at an affordable price. Customer service was also very helpful."</p>
-        </div>
-
-        <div class="testimonial-card">
-          <div class="rating">
-            <img src="images/star.png" alt="Rating Stars" class="stars-img">
-          </div>
-          <h4 class="testimonial-author">Sarah M. <img src="images/ver.png" alt="Verified" class="verified-icon"></h4>
-          <p class="testimonial-text">"I'm blown away by the quality and style of the clothes I received from Shop.co. From casual wear to elegant dresses, every piece I've bought has exceeded my expectations."</p>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="rating">
-            <img src="images/star.png" alt="Rating Stars" class="stars-img">
-          </div>
-          <h4 class="testimonial-author">Alex K. <img src="images/ver.png" alt="Verified" class="verified-icon"></h4>
-          <p class="testimonial-text">"Finding clothes that align with my personal style used to be a challenge until I discovered Shop.co. The range of options they offer is truly remarkable, catering to a variety of tastes and occasions."</p>
-        </div>
-        
-        <div class="testimonial-card">
-          <div class="rating">
-            <img src="images/star.png" alt="Rating Stars" class="stars-img">
-          </div>
-          <h4 class="testimonial-author">James L. <img src="images/ver.png" alt="Verified" class="verified-icon"></h4>
-          <p class="testimonial-text">"As someone who's always on the lookout for unique fashion pieces, I'm thrilled to have stumbled upon Shop.co. The selection of clothes is not only diverse but also on-point with the latest trends."</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer id="footer" class="site-footer">
-    <div class="newsletter-banner">
-      <div class="container newsletter-container">
-        <h2 class="newsletter-title">STAY UPTO DATE ABOUT OUR LATEST OFFERS</h2>
-        <form class="newsletter-form">
-          <div class="email-input-group">
-            <img src="images/mail.png" alt="Email icon" class="Maillogo">
-            <input type="email" placeholder="Enter your email address">
-          </div>
-          <button type="submit" class="subscribe-btn">Subscribe to Newsletter</button>
-        </form>
-      </div>
-    </div>
-    <div class="footer-main">
-      <div class="container footer-main-container">
-        <div class="footer-about">
-          <a href="#" class="footer-logo">DRIPVIBE</a>
-          <p>We have clothes that suits your style and which you're proud to wear.</p>
-          <div class="social-links">
-            <a href="#"><i class="fab fa-twitter"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
-            <a href="#"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        <div class="footer-links-column">
-          <h4>COMPANY</h4>
-          <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Features</a></li>
-            <li><a href="#">Works</a></li>
-            <li><a href="#">Career</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-column">
-          <h4>HELP</h4>
-          <ul>
-            <li><a href="#">Customer Support</a></li>
-            <li><a href="#">Delivery Details</a></li>
-            <li><a href="#">Terms & Conditions</a></li>
-            <li><a href="#">Privacy Policy</a></li>
-          </ul>
-        </div>
-        <div class="footer-links-column">
-          <h4>FAQ</h4>
-          <ul>
-            <li><a href="#">Account</a></li>
-            <li><a href="#">Manage Deliveries</a></li>
-            <li><a href="#">Orders</a></li>
-            <li><a href="#">Payments</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="container footer-bottom-container">
-        <p>DRIPVIBE.co © 2025, All Rights Reserved</p>
-        <div class="payment-methods">
-          <i class="fab fa-cc-visa"></i>
-          <i class="fab fa-cc-mastercard"></i>
-          <i class="fab fa-cc-paypal"></i>
-          <i class="fab fa-cc-apple-pay"></i>
-          <i class="fab fa-cc-amazon-pay"></i>
-        </div>
-      </div>
-    </div>
-  </footer>
-
-  
-  
-   <script src="script.js"></script>
-</body>
-</html>
